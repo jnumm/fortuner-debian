@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# Enable all hardening features.
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+# Reduces unneeded dependencies.
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	dh_auto_clean
+	# This removes bin directory, because dh_auto_clean won't do it.
+	rm -rf bin
+
+override_dh_auto_configure:
+	# USE_GAMES_DIR is a custom flag of this package, which makes its
+	# binary go to /usr/games upon installation.
+	dh_auto_configure -- -DUSE_GAMES_DIR=1

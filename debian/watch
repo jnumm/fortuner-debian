@@ -1,0 +1,4 @@
+# Compulsory line, this is a version 3 file.
+version=3
+# The upstream project is hosted at GitHub.
+https://github.com/jnumm/fortuner/tags .*/tarball/(\d[\d\.]+)

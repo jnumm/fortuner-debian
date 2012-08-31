@@ -1,0 +1,24 @@
+Source: fortuner
+Section: games
+Priority: optional
+Maintainer: Juhani Numminen <juhaninumminen0@gmail.com>
+Build-Depends: debhelper (>= 9),
+               cmake (>= 2.8),
+               libgtk2.0-dev,
+               libgtk-3-dev,
+               libnotify-dev (>= 0.7)
+Standards-Version: 3.9.3
+Homepage: https://github.com/jnumm/fortuner/
+Vcs-Git: git://github.com/jnumm/fortuner-debian.git
+Vcs-Browser: https://github.com/jnumm/fortuner-debian/
+
+Package: fortuner
+Architecture: any
+Depends: fortune-mod,
+         fortunes-min | fortune-cookie-db,
+         ${shlibs:Depends},
+         ${misc:Depends}
+Description: Modernization of classic UNIX fortune program
+ Fortuner displays random epigrams, "fortunes", as notifications from
+ a system tray icon or from command line and, like the original Fortune,
+ allows selecting from also possibly offensive set of fortunes.
