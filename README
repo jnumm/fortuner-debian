@@ -1,0 +1,36 @@
+ABOUT
+------
+Fortuner shows a fortune as a notification. Requires the fortune
+program, libnotify and GTK+ 2 or 3.
+
+INSTALLATION
+-------------
+1) Install the requirements
+   An example for Debian GNU/Linux:
+   # apt-get install libgtk-3-dev cmake fortune-mod libnotify-dev
+   To use GTK+ 2 change libgtk-3-dev to libgtk2.0-dev.
+
+2) Clone the repository (get sources)
+   $ git clone git://github.com/jnumm/fortuner.git
+
+3) Build the program
+   $ cd fortuner
+   $ cmake .
+   GTK+ 2: $ cmake . -DUSE_GTK2
+   $ make
+
+3) Now you can run Fortuner:
+   $ cd bin
+   $ ./fortuner
+
+BUGS
+-----
+Please report bugs to https://github.com/jnumm/fortuner/issues.
+
+LICENSE
+--------
+Fortuner is licensed mainly under GNU GPL v3 (see COPYING).
+
+Exceptions:
+* cmake/modules/FindGLIB2.cmake: 3-clause BSD license
+* all icons: CC BY 3.0
